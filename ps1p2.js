@@ -35,9 +35,24 @@ For example, if the input string is ‘8%3’, return (left, right) => left % ri
     // const res = result("7+1");
     // console.log(res)
 
-    const expression = '7+1';
-    let operator = findoperator(expression);
-    let res = operator(expression);
-    console.log(res);
+    const addexpression = '7+1';
+    let addoperator = findoperator(addexpression);
+    console.log(`${addexpression} = ${addoperator(addexpression)}`);
+
+    const modexpression = '8%3';
+    let modoperator = findoperator(modexpression);
+    console.log(`${modexpression} = ${modoperator(modexpression)}`)
+
+    const subex = '4-3';
+    let subop = findoperator(subex);
+    console.log(`${subex} = ${subop(subex)}`);
+
+    const mulex = '4*3';
+    let mulop = findoperator(mulex);
+    console.log(`${mulex} = ${mulop(mulex)}`);
+
+    const divex = '9/3';
+    let divop = findoperator(divex);
+    console.log(`${divex} = ${divop(divex)}`);
 
 })();
