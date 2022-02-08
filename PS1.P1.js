@@ -8,14 +8,18 @@ Duplicates are fine, so 'exioi' -> 'xoiie'. Test your function using the string
 (function () {
 
     const revAlph = (str) =>{
-        const ray = Array.from(str);
-        const alph_ray = ray.sort();
-        const rev_alph_ray = alph_ray.reverse();
-        const rev_alph_str = rev_alph_ray.join('');
-        return rev_alph_str;
+        return Array.from(str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase()).sort().reverse().join('')
+        // str= str.toLowerCase();
+        // const ray = Array.from(str);
+        // const alph_ray = ray.sort();
+        // const rev_alph_ray = alph_ray.reverse();
+        // const rev_alph_str = rev_alph_ray.join('');
+        // return rev_alph_str;
     }
     
     const result = revAlph("supercalifragilisticexpialidocious");
     console.log(result);
+    const res = revAlph("hello! My name is San-D. g");
+    console.log(res);
 
 })();

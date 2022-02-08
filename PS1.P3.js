@@ -12,14 +12,15 @@ result.
     function that returns an array containing fragments of the 
     input string broken on the character ‘c’.
     */
-    const result = pipe ("supercalifragilisticexpialidocious", (str) =>{
-        let ray = str.split('c');
-        for(let i=1; i<ray.length; i++){
-            ray[i] = "c"+ray[i];
-        }
-        return ray;
-    })
-    //const result = lambda("supercalifragilisticexpialidocious")
+    const result = pipe ("supercalifragilisticexpialidocious", (str) =>str.replace(/c/g, '*c').split('*'))
+        
+    /** before improvement: **/
+        // let ray = str.split('c');
+        // for(let i=1; i<ray.length; i++){
+        //     ray[i] = "c"+ray[i];
+        // }
+        //return ray;
+    
     console.log(result);
 
     /*
@@ -42,7 +43,6 @@ result.
        }
        return stats;
    })
-   //const res = lambda("supercalifragilisticexpialidocious");
    console.log(res);
 
 })()

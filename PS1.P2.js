@@ -6,6 +6,7 @@ For example, if the input string is ‘8%3’, return (left, right) => left % ri
     so the former is how I did it.
 */
 
+
 (function (){
 
     const findoperator = (str) =>{
@@ -31,9 +32,6 @@ For example, if the input string is ‘8%3’, return (left, right) => left % ri
             default: break;
         }
     }
-    // const result = parse("7+1");
-    // const res = result("7+1");
-    // console.log(res)
 
     const addexpression = '7+1';
     let addoperator = findoperator(addexpression);
@@ -54,5 +52,6 @@ For example, if the input string is ‘8%3’, return (left, right) => left % ri
     const divex = '9/3';
     let divop = findoperator(divex);
     console.log(`${divex} = ${divop(divex)}`);
+    
 
 })();
