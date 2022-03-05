@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= "Hey there"
+  h1 #{title}
+  body
+    form(method="POST" action="/ps2")
+    p Name:
+        input(type="text" name="name")
+        input(type="submit")
