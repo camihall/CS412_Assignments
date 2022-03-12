@@ -8,8 +8,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-const ps2 = require('./routes/ps2');
+var usersroute = require('./routes/users');
+const ps2route = require('./routes/ps2');
+const ps2getroute = require('./routes/ps2get');
+//const ps2W = require('./routes/ps2/welcome');
 
 var app = express();
 
@@ -26,8 +28,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/ps2', ps2);
+app.use('/users', usersroute);
+app.use('/ps2', ps2route);
+app.use('/ps2get', ps2getroute);
+//app.use('/ps2/welcome', ps2W);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -65,3 +69,6 @@ app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function () {
     debug('Express server listening on port ' + server.address().port);
 });
+
+//added:
+//module.exports = app;

@@ -1,10 +1,19 @@
 extends layout
 
 block content
-  h1= "Hey there"
-  h1 #{title}
-  body
-    form(method="POST" action="/ps2")
-    p Name:
-        input(type="text" name="name")
-        input(type="submit")
+  h1= title
+  if length 
+    h3 length: #{length}
+  p  <b> Part a:</b> 
+  a(href="http://localhost:3000/ps2") ps2
+  p <b>Part b: </b> <br/> in ps2, you'll see an object ({title: "Hi Buddies"}) be passed to change the header on the page 
+  p <b>Part c:</b> <br/>Enter a word into the form to make it the header of the page (using post method)
+  form(action="/ps2", method="post") 
+    input(type="text", name="name")
+    input(type="submit", value="Go")
+  p <b>Part d:</b> <br/>Go to /ps2get/Whatever to make "Whatever" be the header of the page <br/> Or, enter a phrase into this form to make it the header of the page (using get method).
+  form(action="/ps2get", method="get") 
+    input(type="text", name="phrase")
+    input(type="submit", value="Go")
+
+    

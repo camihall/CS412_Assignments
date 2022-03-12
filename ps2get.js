@@ -2,19 +2,14 @@
 var express = require('express');
 var router = express.Router();
 
-//part a, b
+//part d using form
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Hi Buddies!' });   
+    let newtitle = String(req.url).replace('/?phrase=', '').replaceAll('+',' ');
+    let len = newtitle.length;
+    res.render('index', {title: newtitle, length: len});
 });
 
-//part c
-router.post('/', function (req, res) {
-    let foo = req.body.name;
-    let len = foo.length
-    res.render('index', { title: foo, length:len});
-});
-
-//part d
+//part d using url
 router.get('/:phrase', ((req, res, next)=>{
     let phrase = req.params.phrase
     let len = phrase.length
