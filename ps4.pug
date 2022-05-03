@@ -1,0 +1,35 @@
+extends layout
+
+
+block content
+
+    h1= title
+    h5= data
+
+    case part
+        when 'b'
+            h2 Part b
+            h3 Title: #{title}
+            h4 Details: #{description}
+            h4 Caution: #{cautionMSG}
+
+        when 'c'
+            h2 Part c:
+            br
+            h3 Title: #{title}
+            br
+            h4 Details: #{description}
+            br
+            h4 Caution: #{cautionMSG}
+
+        when 'd'
+            h2 Part d: 
+            br
+            h3 Title: #{title}
+            br
+            h4 Details: #{description}
+            br
+            h4 Caution: #{cautionMSG}
+
+
+            

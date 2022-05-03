@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  extends layout
+
+block content
+  h1= "Search the Weather Channel"
+  p Part B
+    form(action="/ps4" method="POST" id="b")
+      p
+        | City:
+        input(type="text" name="city" placeholder="")
+        |
+      input(type="submit")
+
+
+  p Part C
+    form(action="/ps4" method="POST" id="c")
+      p
+        | City:
+        input(type="text" name="city" placeholder="")
+        |
+      input(type="submit")
+
+  part Part D
+    form(action="/ps4" method="POST" id="d")
+      p
+        | City:
+        input(type="text" name="city" placeholder="")
+        |
+      input(type="submit")
